@@ -130,3 +130,22 @@ SLOT 1 $4000
 .DEFINE NR12 SND_CHAN1_VOL_ENVEL
 .DEFINE NR13 SND_CHAN1_FREQ_LO
 .DEFINE NR14 SND_CHAN1_FREQ_HI_FLAGS
+
+; Channel 2
+
+.DEFINE SND_CHAN2_LEN_DUTY_LOW $16 ; Sound channel2 length and duty cycle register address low byte
+.DEFINE SND_CHAN2_LEN_DUTY IOREGS+SND_CHAN2_LEN_DUTY_LOW ; full address
+
+.DEFINE SND_CHAN2_VOL_ENVEL_LOW $17 ; Sound channel2 volume envelope register address low byte
+.DEFINE SND_CHAN2_VOL_ENVEL IOREGS+SND_CHAN2_VOL_ENVEL_LOW ; full address
+
+.DEFINE SND_CHAN2_FREQ_LO_LOW $18 ; Sound channel2 frequency lower 8 bits register address low byte
+.DEFINE SND_CHAN2_FREQ_LO IOREGS+SND_CHAN2_FREQ_LO_LOW ; full address
+
+.DEFINE SND_CHAN2_FREQ_HI_FLAGS_LOW $19 ; Sound channel2 frequency lower 8 bits register address low byte
+.DEFINE SND_CHAN2_FREQ_HI_FLAGS IOREGS+SND_CHAN2_FREQ_HI_FLAGS_LOW ; full address
+
+.DEFINE NR21 SND_CHAN2_LEN_DUTY ; For Pandoc search and use
+.DEFINE NR22 SND_CHAN2_VOL_ENVEL
+.DEFINE NR23 SND_CHAN2_FREQ_LO
+.DEFINE NR24 SND_CHAN2_FREQ_HI_FLAGS
