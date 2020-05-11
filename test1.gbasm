@@ -105,3 +105,28 @@ SLOT 1 $4000
 
 .DEFINE VRAM_TILE_MAP1 $9800 ; 1st tile map
 .DEFINE VRAM_TILE_MAP2 $9C00 ; 2nd tile map
+
+; Sound registers
+
+; Channel 1
+
+.DEFINE SND_CHAN1_SWEEP_LOW $10 ; Sound channel1 sweep register address low byte
+.DEFINE SND_CHAN1_SWEEP IOREGS+SND_CHAN1_SWEEP_LOW ; full address
+
+.DEFINE SND_CHAN1_LEN_DUTY_LOW $11 ; Sound channel1 length and duty cycle register address low byte
+.DEFINE SND_CHAN1_LEN_DUTY IOREGS+SND_CHAN1_LEN_DUTY_LOW ; full address
+
+.DEFINE SND_CHAN1_VOL_ENVEL_LOW $12 ; Sound channel1 volume envelope register address low byte
+.DEFINE SND_CHAN1_VOL_ENVEL IOREGS+SND_CHAN1_VOL_ENVEL_LOW ; full address
+
+.DEFINE SND_CHAN1_FREQ_LO_LOW $13 ; Sound channel1 frequency lower 8 bits register address low byte
+.DEFINE SND_CHAN1_FREQ_LO IOREGS+SND_CHAN1_FREQ_LO_LOW ; full address
+
+.DEFINE SND_CHAN1_FREQ_HI_FLAGS_LOW $14 ; Sound channel1 frequency lower 8 bits register address low byte
+.DEFINE SND_CHAN1_FREQ_HI_FLAGS IOREGS+SND_CHAN1_FREQ_HI_FLAGS_LOW ; full address
+
+.DEFINE NR10 SND_CHAN1_SWEEP ; For Pandoc search and use
+.DEFINE NR11 SND_CHAN1_LEN_DUTY
+.DEFINE NR12 SND_CHAN1_VOL_ENVEL
+.DEFINE NR13 SND_CHAN1_FREQ_LO
+.DEFINE NR14 SND_CHAN1_FREQ_HI_FLAGS
