@@ -1,24 +1,3 @@
-.ROMDMG
-.NAME "TEST"
-.CARTRIDGETYPE 0
-.RAMSIZE 0 ; no RAM on cartridge
-.COMPUTEGBCHECKSUM
-.COMPUTEGBCOMPLEMENTCHECK ; compute checksums
-.LICENSEECODENEW "00" ; we do not have a licence
-.EMPTYFILL $00 ; empty space filled with 0s
-
-.MEMORYMAP ; basically, we have 32ko of memory
-SLOTSIZE $4000
-DEFAULTSLOT 0
-SLOT 0 $0000
-SLOT 1 $4000
-.ENDME
-
-.ROMBANKSIZE $4000
-.ROMBANKS 2
-
-.BANK 0 SLOT 0
-
 .DEFINE VRAM   $8000 ; Vidéo RAM start address (tile data + other video related things)
 .DEFINE WRAM   $C000 ; Work RAM start address (basically a manually managed heap)
 .DEFINE ERAM   $E000 ; Echo RAM start address (using this memory range basically equates to using WRAM)
@@ -122,7 +101,7 @@ SLOT 1 $4000
 .DEFINE SND_CHAN1_FREQ_LO_LOW $13 ; Sound channel1 frequency lower 8 bits register address low byte
 .DEFINE SND_CHAN1_FREQ_LO IOREGS+SND_CHAN1_FREQ_LO_LOW ; full address
 
-.DEFINE SND_CHAN1_FREQ_HI_FLAGS_LOW $14 ; Sound channel1 frequency lower 8 bits register address low byte
+.DEFINE SND_CHAN1_FREQ_HI_FLAGS_LOW $14 ; Sound channel1 frequency higher 3 bits register plus control address low byte
 .DEFINE SND_CHAN1_FREQ_HI_FLAGS IOREGS+SND_CHAN1_FREQ_HI_FLAGS_LOW ; full address
 
 .DEFINE NR10 SND_CHAN1_SWEEP ; For Pandoc search and use
@@ -142,7 +121,7 @@ SLOT 1 $4000
 .DEFINE SND_CHAN2_FREQ_LO_LOW $18 ; Sound channel2 frequency lower 8 bits register address low byte
 .DEFINE SND_CHAN2_FREQ_LO IOREGS+SND_CHAN2_FREQ_LO_LOW ; full address
 
-.DEFINE SND_CHAN2_FREQ_HI_FLAGS_LOW $19 ; Sound channel2 frequency lower 8 bits register address low byte
+.DEFINE SND_CHAN2_FREQ_HI_FLAGS_LOW $19 ; Sound channel2 frequency higher 3 bits register plus control address low byte
 .DEFINE SND_CHAN2_FREQ_HI_FLAGS IOREGS+SND_CHAN2_FREQ_HI_FLAGS_LOW ; full address
 
 .DEFINE NR21 SND_CHAN2_LEN_DUTY ; For Pandoc search and use
